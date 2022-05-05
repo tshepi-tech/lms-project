@@ -11,8 +11,8 @@ img {
   height: auto;
 }
 .colour_block {
-  max-width: 100%;
-  height: auto;
+  width: 240px;
+  height: 240px;
   background-color: coral;
 }
 .input-field {
