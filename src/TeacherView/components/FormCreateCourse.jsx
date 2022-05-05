@@ -52,7 +52,7 @@ export default function FormCreateCourse() {
 
   function onFail(error) {
     console.error(error);
-    alert("Could not create a document, check that the name is not reapeated.");
+    alert("Could not create a course, check that the course does not exist.");
   }
 
   return (
