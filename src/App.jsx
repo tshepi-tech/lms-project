@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import { CourseProvider } from "./state/CourseContext";
 import { ModalProvider } from "./state/ModalContext";
 import "./styles/styles.css";
+import MangageStudent from "./TeacherView/components/ManageStudent";
 import Modal from "./TeacherView/components/Modal";
 import Admin from "./TeacherView/pages/Admin";
 import AdminCourses from "./TeacherView/pages/AdminCourses";
@@ -19,7 +20,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/admin" element={<Admin />} />
-              <Route path="/admin/:courseId" element={<AdminCourses />} />
+              <Route path="/admin/:courseId" element={<MangageStudent />} />
             </Routes>
           </BrowserRouter>
           <Modal />

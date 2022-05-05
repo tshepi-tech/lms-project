@@ -36,8 +36,8 @@ export default function Admin() {
     setStatus(2);
   }
   //Components
-  const courseList = courses.map((item, index) => (
-    <ItemAdminCourse key={item.id} item={item}>
+  const courseList = courses.map((course) => (
+    <ItemAdminCourse key={course.id} course={course}>
       list of courses
     </ItemAdminCourse>
   ));
