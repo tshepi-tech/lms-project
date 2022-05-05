@@ -1,9 +1,12 @@
 //Project files
-import EmptyCourse from "./../../TeacherView/components/EmptyCourse";
+import FormCreateCourse from "../components/FormCreateCourse";
+import EmptyCourse from "../components/EmptyCourse";
 import { useCourses } from "./../../state/CourseContext";
+import { useModal } from "./../../state/ModalContext";
 
 export default function Admin() {
   const { courses, setCourses } = useCourses();
+  const { setModal } = useModal();
 
   //Components
   //load list of courses
@@ -17,7 +20,9 @@ export default function Admin() {
       <div className="grid">
         {courses.length === 0 && <EmptyCourse />}
         {courses.length > 0 && courseList}
-        <button>Add new course</button>
+        <button onClick={() => setModal(<FormCreateCourse />)}>
+          Add new course
+        </button>
       </div>
     </div>
   );

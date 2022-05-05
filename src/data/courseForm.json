@@ -1,0 +1,20 @@
+{
+  "title": {
+    "label": "Title",
+    "placeholder": "Example: Introduction to Web3",
+    "type": "text",
+    "required": true
+  },
+  "text": {
+    "label": "Description",
+    "placeholder": "Tell the students more about the course",
+    "type": "text",
+    "required": true
+  },
+  "term": {
+    "label": "term",
+    "placeholder": "Example: Autumn 2022",
+    "type": "text",
+    "required": true
+  }
+}
