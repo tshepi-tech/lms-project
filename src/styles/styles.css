@@ -10,7 +10,11 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+.colour_block {
+  max-width: 100%;
+  height: auto;
+  background-color: coral;
+}
 .input-field {
   display: block;
   padding: 8px;
