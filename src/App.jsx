@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { CourseProvider } from "./state/CourseContext";
 import { ModalProvider } from "./state/ModalContext";
+import "./styles/styles.css";
 import Modal from "./TeacherView/components/Modal";
 import Admin from "./TeacherView/pages/Admin";
 import AdminCourses from "./TeacherView/pages/AdminCourses";
