@@ -1,0 +1,14 @@
+{
+  "URLname": {
+    "label": "Link name",
+    "placeholder": "Example: Introduction to Web3",
+    "type": "text",
+    "required": true
+  },
+  "URL": {
+    "label": "URL",
+    "placeholder": "www.web3basics.com",
+    "type": "url",
+    "required": true
+  }
+}

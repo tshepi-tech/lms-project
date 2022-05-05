@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { CourseProvider } from "./state/CourseContext";
 import { ModalProvider } from "./state/ModalContext";
+import { ResourceProvider } from "./state/ResourceContext";
 import "./styles/styles.css";
 import MangageStudent from "./TeacherView/pages/ManageStudent";
 import Modal from "./TeacherView/components/Modal";
@@ -16,18 +17,20 @@ export default function App() {
     <div className="App">
       <ModalProvider>
         <CourseProvider>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/admin" element={<Admin />} />
-              <Route path="/admin/:courseId" element={<MangageStudent />} />
-              <Route
-                path="/admin/:courseId/files"
-                element={<ManageResources />}
-              />
-            </Routes>
-          </BrowserRouter>
-          <Modal />
+          <ResourceProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/admin" element={<Admin />} />
+                <Route path="/admin/:courseId" element={<MangageStudent />} />
+                <Route
+                  path="/admin/resources/:courseId"
+                  element={<ManageResources />}
+                />
+              </Routes>
+            </BrowserRouter>
+            <Modal />
+          </ResourceProvider>
         </CourseProvider>
       </ModalProvider>
     </div>

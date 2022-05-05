@@ -10,7 +10,7 @@ export default function ItemAdminCourse({ course }) {
 
   //Properties
   const studentManager = `/admin/${course.id}`;
-  const resourcesManager = `/admin/${course.id}/files`;
+  const resourcesManager = `/admin/resources/${course.id}`;
 
   return (
     <article key={course.id}>

@@ -6,21 +6,22 @@ const Context = createContext(null);
 
 // Methods
 // For the parent
-export function CourseProvider({ children }) {
+export function ResourceProvider({ children }) {
   // Local state
-  const [courses, setCourses] = useState([]);
+  const [links, setLinks] = useState([]);
+  const [files, setFiles] = useState([]);
 
   // Properties
-  const value = { courses, setCourses };
+  const value = { links, setLinks, files, setFiles };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 }
 
 // For the child
-export function useCourses() {
+export function useResources() {
   const context = useContext(Context);
   const errorText =
-    "To use useCourses(), you need to wrap the parent component with <CourseProvider/>";
+    "To use useResources(), you need to wrap the parent component with <ResourceProvider/>";
 
   // Safeguards
   if (!context) throw new Error(errorText);
