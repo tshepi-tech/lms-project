@@ -9,14 +9,18 @@ export default function ItemAdminCourse({ course }) {
   const { setModal } = useModal();
 
   //Properties
-  const linkPath = `/admin/${course.id}`;
+  const studentManager = `/admin/${course.id}`;
+  const resourcesManager = `/admin/${course.id}/files`;
 
   return (
     <article key={course.id}>
       <div className="content">
         <div className="colour_block"></div>
-        <Link to={linkPath}>
+        <Link to={studentManager}>
           <button>👩‍🎓</button>
+        </Link>
+        <Link to={resourcesManager}>
+          <button> 📁 </button>
         </Link>
         <button>✍️</button>
         <button>🗑</button>

@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 //Project files
-import { addDocument, getCollection } from "./../../scripts/firestore";
-import StudentList from "./StudentCourseList";
-import { deleteDocument } from "./../../scripts/firestore";
-import { removeUser } from "./../../scripts/firebaseAuth";
-import { createFile } from "./../../scripts/cloudStorage";
-import readFile from "./../../scripts/readFile";
+import { addDocument, getCollection } from "../../scripts/firestore";
+import StudentList from "../components/StudentCourseList";
+import { deleteDocument } from "../../scripts/firestore";
+import { removeUser } from "../../scripts/firebaseAuth";
+import { createFile } from "../../scripts/cloudStorage";
+import readFile from "../../scripts/readFile";
 
 export default function MangageStudent() {
   const [students, setStudents] = useState([]);
@@ -37,7 +37,8 @@ export default function MangageStudent() {
 
   return (
     <div>
-      {courseId}
+      <h1>{courseId}</h1>
+      <p>Student List</p>
       <StudentList onRemove={onRemove} students={students} />
     </div>
   );

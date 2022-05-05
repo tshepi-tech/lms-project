@@ -6,10 +6,10 @@ import Home from "./pages/Home";
 import { CourseProvider } from "./state/CourseContext";
 import { ModalProvider } from "./state/ModalContext";
 import "./styles/styles.css";
-import MangageStudent from "./TeacherView/components/ManageStudent";
+import MangageStudent from "./TeacherView/pages/ManageStudent";
 import Modal from "./TeacherView/components/Modal";
 import Admin from "./TeacherView/pages/Admin";
-import AdminCourses from "./TeacherView/pages/AdminCourses";
+import ManageResources from "./TeacherView/pages/ManageResources";
 
 export default function App() {
   return (
@@ -21,6 +21,10 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/admin/:courseId" element={<MangageStudent />} />
+              <Route
+                path="/admin/:courseId/files"
+                element={<ManageResources />}
+              />
             </Routes>
           </BrowserRouter>
           <Modal />
