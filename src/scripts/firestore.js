@@ -35,7 +35,7 @@ export async function addDocument(path, data) {
 export async function getDocument(path, id) {
   const documentPath = doc(firestore, path, id);
   const document = await getDoc(documentPath);
-  console.log(document.data);
+
   return document.data();
 }
 
