@@ -1,33 +1,45 @@
 //NPM packages
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 //Project files
-import Home from "./pages/Home";
 import { CourseProvider } from "./state/CourseContext";
 import { ModalProvider } from "./state/ModalContext";
 import { ResourceProvider } from "./state/ResourceContext";
 import "./styles/styles.css";
-import MangageStudent from "./TeacherView/pages/ManageStudent";
 import Modal from "./TeacherView/components/Modal";
-import Admin from "./TeacherView/pages/Admin";
-import ManageResources from "./TeacherView/pages/ManageResources";
+import Unlogged from "./Routes/Unlogged";
+import Admin from "./Routes/Admin";
+import Student from "./Routes/Student";
 
 export default function App() {
+  const [uid, setUID] = useState(null);
+  const [uidAdmin, setUIDadmin] = useState(null);
+
   return (
     <div className="App">
       <ModalProvider>
         <CourseProvider>
           <ResourceProvider>
             <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/admin" element={<Admin />} />
-                <Route path="/admin/:courseId" element={<MangageStudent />} />
-                <Route
-                  path="/admin/resources/:courseId"
-                  element={<ManageResources />}
+              {!uid && !uidAdmin && (
+                <Unlogged
+                  uidState={[uid, setUID]}
+                  adminState={[uidAdmin, setUIDadmin]}
                 />
-              </Routes>
+              )}
+              {uidAdmin && (
+                <Admin
+                  adminState={[uidAdmin, setUIDadmin]}
+                  uidState={[uid, setUID]}
+                />
+              )}
+              {uid && (
+                <Student
+                  adminState={[uidAdmin, setUIDadmin]}
+                  uidState={[uid, setUID]}
+                />
+              )}
             </BrowserRouter>
             <Modal />
           </ResourceProvider>

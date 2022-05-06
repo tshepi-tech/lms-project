@@ -1,0 +1,36 @@
+//NPM packages
+import { Routes, Route } from "react-router-dom";
+
+//Project files
+import Dashboard from "./../Dashboard";
+import Landing from "../AuthPages/Landing";
+import Login from "../AuthPages/Login";
+import PasswordReset from "../AuthPages/PasswordReset";
+import MangageStudent from "../TeacherView/pages/ManageStudent";
+import ManageResources from "../TeacherView/pages/ManageResources";
+
+export default function Admin({ adminState, uidState }) {
+  const [uidAdmin, setUIDadmin] = adminState;
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="resetpassword" element={<PasswordReset />} />
+        <Route
+          path="login"
+          element={<Login adminState={adminState} uidState={uidState} />}
+        />
+        <Route
+          path="dashboard"
+          element={<Dashboard uidState={uidState} adminState={adminState} />}
+        />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/:courseId" element={<MangageStudent />} />
+        <Route
+          path="/admin/resources/:courseId"
+          element={<ManageResources />}
+        />
+      </Routes>
+    </div>
+  );
+}
