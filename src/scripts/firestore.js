@@ -48,6 +48,14 @@ export async function getCollection(path) {
 
   return documents;
 }
+// -- Update
+export async function updateDocument(path, data) {
+  const id = data.id;
+  const documentPath = doc(firestore, path, id);
+
+  await setDoc(documentPath, data);
+  return "Succeed modifying document";
+}
 
 // -- Delete
 export async function deleteDocument(path, id) {
