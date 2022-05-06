@@ -1,13 +1,10 @@
 //NPM pacakages
 import { useState } from "react";
-import { useParams } from "react-router-dom";
-
 //Project files
 import InputField from "./../../components/InputField";
 import form from "./../../data/linkForm";
 import { doc, setDoc } from "firebase/firestore";
 import { firestore } from "./../../scripts/firebase";
-import { getDocument } from "./../../scripts/firestore";
 import textToURL from "./../../scripts/textToURL";
 import { useResources } from "./../../state/ResourceContext";
 import { useModal } from "./../../state/ModalContext";
@@ -38,41 +35,6 @@ export default function FormCreateLink({ courseId }) {
     setLinks([...links, link]);
   }
 
-  /* async function onSubmit(event) {
-    event.preventDefault();
-
-    const id = textToURL(URLname);
-    const existingDocument = await getDocument(
-      `courses/${courseId}/content/resources/content/`,
-      id
-    ).catch(onFail);
-
-    //Safeguard
-    if (existingDocument !== undefined) {
-      alert(`An item with the name ${URL} already exist`);
-      return;
-    }
-    const link = { URLname: URLname, URL: URL };
-    const done = await setDoc(
-      doc(firestore, `courses/${courseId}/content/resources/content/`, id),
-      link
-    ).catch(onFail);
-
-    if (done) onSuccess(link, id);
-  }
-
-  function onSuccess(link, id) {
-    link.id = id;
-    setModal(null);
-    alert(`${link.URLname} added`);
-    setLinks([...links, link]);
-  }
-
-  function onFail(error) {
-    console.error(error);
-    alert("Could not create link, check that the course does not exist.");
-  }
- */
   return (
     <form onSubmit={onSubmit}>
       <h2>Add a link for {courseId}</h2>

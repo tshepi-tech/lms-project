@@ -1,9 +1,4 @@
-//NPM pacakages
-import { useState } from "react";
-
 //Project files
-import InputField from "../../components/InputField";
-import form from "./../../data/courseForm";
 import { deleteDocument } from "../../scripts/firestore";
 import { useCourses } from "../../state/CourseContext";
 import { useModal } from "../../state/ModalContext";

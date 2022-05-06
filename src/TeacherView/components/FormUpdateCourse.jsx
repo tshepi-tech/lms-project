@@ -1,6 +1,5 @@
 //NPM pacakages
 import { useState } from "react";
-
 //Project files
 import InputField from "./../../components/InputField";
 import form from "./../../data/courseForm";
@@ -12,7 +11,6 @@ export default function FormUpdateCourse({ course }) {
   //Global state
   const { courses, setCourses } = useCourses();
   const { setModal } = useModal();
-
   //Local state
   const [title, setTitle] = useState(course.title);
   const [text, setText] = useState(course.text);
@@ -32,7 +30,6 @@ export default function FormUpdateCourse({ course }) {
 
     if (isDone) onSucess(editedItem);
   }
-
   function onSucess(editedItem) {
     const clonedCourses = [...courses];
     const index = clonedCourses.findIndex(
@@ -43,12 +40,10 @@ export default function FormUpdateCourse({ course }) {
     setCourses(clonedCourses);
     setModal(null);
   }
-
   function onFail(error) {
     console.error(error);
     alert("Could not update the item. Try again");
   }
-
   return (
     <div>
       <form onSubmit={onSubmit}>
