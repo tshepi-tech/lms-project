@@ -39,7 +39,12 @@ export default function ManageLinks() {
   }
 
   const linkList = links.map((link) => (
-    <LinkItem key={link.id} link={link} onRemove={onRemove} />
+    <LinkItem
+      key={link.id}
+      link={link}
+      onRemove={onRemove}
+      courseId={courseId}
+    />
   ));
 
   return (
