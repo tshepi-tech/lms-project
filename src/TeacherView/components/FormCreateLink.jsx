@@ -28,6 +28,20 @@ export default function FormCreateLink({ courseId }) {
     event.preventDefault();
 
     const id = textToURL(URLname);
+    const link = { URLname: URLname, URL: URL };
+    await setDoc(
+      doc(firestore, `courses/${courseId}/content/resources/content/`, id),
+      link
+    );
+    setModal(null);
+    alert(`${id} added`);
+    setLinks([...links, link]);
+  }
+
+  /* async function onSubmit(event) {
+    event.preventDefault();
+
+    const id = textToURL(URLname);
     const existingDocument = await getDocument(
       `courses/${courseId}/content/resources/content/`,
       id
@@ -40,16 +54,11 @@ export default function FormCreateLink({ courseId }) {
     }
     const link = { URLname: URLname, URL: URL };
     const done = await setDoc(
-      doc(
-        firestore,
-        `courses/${courseId}/content/resources/content/`,
-        `${link.URLname}`
-      ),
+      doc(firestore, `courses/${courseId}/content/resources/content/`, id),
       link
     ).catch(onFail);
 
     if (done) onSuccess(link, id);
-    // if (done) onSuccess(id, link);
   }
 
   function onSuccess(link, id) {
@@ -63,10 +72,10 @@ export default function FormCreateLink({ courseId }) {
     console.error(error);
     alert("Could not create link, check that the course does not exist.");
   }
-
+ */
   return (
     <form onSubmit={onSubmit}>
-      <h2>Create a new course for {courseId}</h2>
+      <h2>Add a link for {courseId}</h2>
       <InputField setup={form.URLname} state={[URLname, setURLname]} />
       <InputField setup={form.URL} state={[URL, setURL]} />
       <button>Submit</button>
