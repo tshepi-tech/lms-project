@@ -12,7 +12,7 @@ import textToURL from "./../../scripts/textToURL";
 import { useResources } from "./../../state/ResourceContext";
 import { useModal } from "./../../state/ModalContext";
 
-export default function FormCreateCourse({ courseId }) {
+export default function FormCreateLink({ courseId }) {
   //Global state
   const { links, setLinks } = useResources();
   const { setModal } = useModal();
@@ -48,15 +48,15 @@ export default function FormCreateCourse({ courseId }) {
       link
     ).catch(onFail);
 
-    if (done) onSuccess(id, link);
+    if (done) onSuccess(link, id);
+    // if (done) onSuccess(id, link);
   }
 
-  function onSuccess(id, link) {
+  function onSuccess(link, id) {
     link.id = id;
-    setLinks([...links, link]);
     setModal(null);
     alert(`${link.URLname} added`);
-    console.log(`${link.URLname} added`);
+    setLinks([...links, link]);
   }
 
   function onFail(error) {

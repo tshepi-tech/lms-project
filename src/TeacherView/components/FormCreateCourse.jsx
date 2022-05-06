@@ -40,10 +40,10 @@ export default function FormCreateCourse() {
       course
     ).catch(onFail);
 
-    if (done) onSuccess(id, course);
+    if (done) onSuccess(course, id);
   }
 
-  function onSuccess(id, course) {
+  function onSuccess(course, id) {
     course.id = id;
     setCourses([...courses, course]);
     setModal(null);

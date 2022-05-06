@@ -1,7 +1,9 @@
 //NPM Package
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 //Project files
 import CreateLink from "./../components/FormCreateLink";
+import { getCollection } from "../../scripts/firestore";
 import { useModal } from "./../../state/ModalContext";
 
 export default function ManageLinks() {
@@ -9,6 +11,8 @@ export default function ManageLinks() {
 
   //Global state
   const { setModal } = useModal();
+  // Local state
+  const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
 
   return (
     <div>

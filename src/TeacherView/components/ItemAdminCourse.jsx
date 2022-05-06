@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 //Project files
 import { useModal } from "./../../state/ModalContext";
+import DeleteCourse from "./DeleteCourse";
 
 export default function ItemAdminCourse({ course }) {
   //Global state
@@ -23,7 +24,9 @@ export default function ItemAdminCourse({ course }) {
           <button> 📁 </button>
         </Link>
         <button>✍️</button>
-        <button>🗑</button>
+        <button onClick={() => setModal(<DeleteCourse course={course} />)}>
+          🗑
+        </button>
       </div>
       <h3>{course.title}</h3>
     </article>
