@@ -62,5 +62,4 @@ export async function deleteDocument(path, id) {
   const documentPath = doc(firestore, path, id);
 
   await deleteDoc(documentPath);
-  console.log("Deleted document successfully", id, "Remember to delete me");
 }
