@@ -12,8 +12,6 @@ export default function NotLogged() {
       <Link to="/login">Log In</Link>
       <br></br>
       <Link to="/reset-password">Reset password</Link>
-      <br></br>
-      <Link to="/signupAdmin">Admin signup</Link>
     </div>
   );
 }
