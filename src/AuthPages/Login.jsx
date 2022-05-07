@@ -8,15 +8,16 @@ import InputField from "../components/InputField";
 import form from "../data/loginForm.json";
 import { loginUser } from "../scripts/firebaseAuth";
 import { getCollection } from "../scripts/firestore";
+import { useUserRole } from "../state/UserRolesContext";
 
 export default function Login({ uidState, adminState }) {
   const navigation = useNavigate();
   const [uid, setUID] = uidState;
   const [uidAdmin, setUIDadmin] = adminState;
 
-  const [email, setEmail] = useState("tshepi.tech@gmail.com");
-  const [password, setPassword] = useState("123456");
-  const [students, setStudents] = useState([]);
+  const [email, setEmail] = useState("tshepi.lehutjo@gmail.com");
+  const [password, setPassword] = useState("12345abcd");
+  const { students, setStudents } = useUserRole();
 
   useEffect(() => {
     async function loadData(path) {
