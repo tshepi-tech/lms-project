@@ -1,28 +1,22 @@
 {
-    "name": {
-      "label": "Full name",
-      "placeholder": "Ex: Jhon Doe",
-      "type": "text"
-    },
-    "email": {
-      "label": "E-mail",
-      "placeholder": "Ex: jhon_doe@yahoo.com",
-      "type": "email"
-    },
-    "age": {
-      "label": "Age",
-      "placeholder": "Ex: 30",
-      "type": "number"
-    },
-    "city": {
-      "label": "City",
-      "placeholder": "Ex: New York",
-      "type": "text"
-    },
-    "password": {
-      "label": "Password",
-      "placeholder": "********",
-      "type": "password"
-    }
+  "name": {
+    "label": "Full name",
+    "placeholder": "Ex: Jhon Doe",
+    "type": "text"
+  },
+  "email": {
+    "label": "E-mail",
+    "placeholder": "Ex: sally@yahoo.com",
+    "type": "email"
+  },
+  "studentId": {
+    "label": "StudentId",
+    "placeholder": "Ex: 704780",
+    "type": "number"
+  },
+  "password": {
+    "label": "Password",
+    "placeholder": "********",
+    "type": "password"
   }
-  
+}
