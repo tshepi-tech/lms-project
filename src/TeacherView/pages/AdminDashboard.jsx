@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import FormCreateCourse from "../components/FormCreateCourse";
 import EmptyCourse from "../components/EmptyCourse";
 import ItemAdminCourse from "../components/ItemAdminCourse";
-import { getCollection } from "./../../scripts/firestore";
-import { useCourses } from "./../../state/CourseContext";
-import { useModal } from "./../../state/ModalContext";
+import { getCollection } from "../../scripts/firestore";
+import { useCourses } from "../../state/CourseContext";
+import { useModal } from "../../state/ModalContext";
 
 export default function Admin() {
   //Global state

@@ -2,6 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 
 //Project files
+import AdminDashboard from "../TeacherView/pages/AdminDashboard";
 import Dashboard from "./../Dashboard";
 import Landing from "../AuthPages/Landing";
 import Login from "../AuthPages/Login";
@@ -10,7 +11,6 @@ import MangageStudent from "../TeacherView/pages/ManageStudent";
 import ManageResources from "../TeacherView/pages/ManageResources";
 
 export default function Admin({ adminState, uidState }) {
-  const [uidAdmin, setUIDadmin] = adminState;
   return (
     <div>
       <Routes>
@@ -24,12 +24,9 @@ export default function Admin({ adminState, uidState }) {
           path="dashboard"
           element={<Dashboard uidState={uidState} adminState={adminState} />}
         />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/:courseId" element={<MangageStudent />} />
-        <Route
-          path="/admin/resources/:courseId"
-          element={<ManageResources />}
-        />
+        <Route path="admin" element={<AdminDashboard />} />
+        <Route path="admin/:courseId" element={<MangageStudent />} />
+        <Route path="admin/resources/:courseId" element={<ManageResources />} />
       </Routes>
     </div>
   );
