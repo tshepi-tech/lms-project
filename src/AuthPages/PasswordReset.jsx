@@ -21,7 +21,7 @@ export default function PasswordReset() {
     <div>
       <p>
         Please fill in the email which you used to create the account of the
-        password you want to reset. Instructions to reset the passowrd will be
+        password you want to reset. Instructions to reset the password will be
         sent to that email{" "}
       </p>
       <form onSubmit={onReset}>
@@ -29,7 +29,7 @@ export default function PasswordReset() {
         <button>Submit</button>
       </form>
       <p>
-        Did you remembered your password?
+        Did you remember your password?
         <Link to="/login">Log in</Link> to go back the login page.
       </p>
     </div>

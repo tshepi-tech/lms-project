@@ -1,4 +1,5 @@
 //NPM packages
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -41,12 +42,6 @@ export default function Login({ uidState, adminState }) {
 
     const loginUID = await loginUser(email, password);
     isStudent(loginUID);
-
-    /*  if (loginUID) {
-      setUID(loginUID);
-    
-      // navigation("/dashboard");
-    } */
   }
 
   return (
@@ -57,6 +52,7 @@ export default function Login({ uidState, adminState }) {
         <InputField setup={form.password} state={[password, setPassword]} />
         <button>Submit</button>
       </form>
+      <Link to="/resetpassword">Reset password</Link>
     </div>
   );
 }
