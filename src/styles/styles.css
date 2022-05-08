@@ -1,5 +1,6 @@
 @import url("./admin.css");
 @import url("./modal.css");
+@import url("./Landing.css");
 
 .App {
   max-width: 960px;

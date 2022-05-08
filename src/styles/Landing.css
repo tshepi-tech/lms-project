@@ -1,0 +1,35 @@
+.UnloggedNav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav_buttons {
+  width: 154px;
+  height: 44px;
+  background-color: #c4a092;
+  border-radius: 12px;
+  font-size: 18px;
+  color: white;
+  margin-left: 16px;
+}
+
+.landing_content {
+  display: flex;
+}
+
+.landing_text {
+  margin-top: 75px;
+}
+
+.create_acc {
+  width: 154px;
+  height: 44px;
+  background-color: #c4a092;
+  border-radius: 12px;
+  font-size: 18px;
+  color: white;
+}
+
+.main_image {
+  height: 620px;
+}
