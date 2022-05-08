@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import InputField from "../components/InputField";
 import form from "../data/resetPasswordForm.json";
 import { resetUser } from "../scripts/firebaseAuth";
+import NavigationStatic from "../components/NavigationStatic";
 
 export default function PasswordReset() {
   const [email, setEmail] = useState("tshepi.lehutjo@gmail.com");
@@ -19,6 +20,7 @@ export default function PasswordReset() {
 
   return (
     <div>
+      <NavigationStatic />
       <p>
         Please fill in the email which you used to create the account of the
         password you want to reset. Instructions to reset the password will be

@@ -9,6 +9,7 @@ import form from "../data/loginForm.json";
 import { loginUser } from "../scripts/firebaseAuth";
 import { getCollection } from "../scripts/firestore";
 import { useUserRole } from "../state/UserRolesContext";
+import NavigationStatic from "../components/NavigationStatic";
 
 export default function Login({ uidState, adminState }) {
   const navigation = useNavigate();
@@ -47,13 +48,13 @@ export default function Login({ uidState, adminState }) {
 
   return (
     <div>
+      <NavigationStatic />
       <h1>Welcome back</h1>
       <form onSubmit={onLogin}>
         <InputField setup={form.email} state={[email, setEmail]} />
         <InputField setup={form.password} state={[password, setPassword]} />
         <button>Submit</button>
       </form>
-      <Link to="/resetpassword">Reset password</Link>
     </div>
   );
 }

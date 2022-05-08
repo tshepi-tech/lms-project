@@ -5,8 +5,8 @@ export default function NavigationStatic() {
   return (
     <nav className="UnloggedNav">
       <div className="NavButtons">
-        <Link to="/signup">
-          <button className="nav_buttons">Create account</button>
+        <Link to="/resetpassword">
+          <button className="nav_buttons">Reset password</button>
         </Link>
         <Link to="/login">
           <button className="nav_buttons">Log In</button>
