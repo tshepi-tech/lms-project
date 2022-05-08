@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 //Project files
 import AdminDashboard from "../TeacherView/pages/AdminDashboard";
-import Dashboard from "./../Dashboard";
+import Dashboard from "../Dashboard";
 import Landing from "../AuthPages/Landing";
 import Login from "../AuthPages/Login";
 import PasswordReset from "../AuthPages/PasswordReset";
@@ -26,6 +26,7 @@ export default function Admin({ adminState, uidState }) {
         />
         <Route path="admin" element={<AdminDashboard />} />
         <Route path="admin/:courseId" element={<MangageStudent />} />
+
         <Route path="admin/resources/:courseId" element={<ManageResources />} />
       </Routes>
     </div>

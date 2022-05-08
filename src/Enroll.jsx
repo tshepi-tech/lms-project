@@ -41,7 +41,7 @@ export default function Enroll({ courses, uid }) {
 
   const courseList = courses.map((item) => (
     <li key={item.id}>
-      <Link to={`/admin/${item.id}`}>{item.title}</Link>
+      <Link to={`/course/${item.id}`}>{item.title}</Link>
       <button onClick={() => onEnroll(item.id)}>Enroll</button>
     </li>
   ));

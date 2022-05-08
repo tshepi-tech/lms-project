@@ -38,9 +38,7 @@ export default function Admin() {
   }
   //Components
   const courseList = courses.map((course) => (
-    <ItemAdminCourse key={course.id} course={course}>
-      list of courses
-    </ItemAdminCourse>
+    <ItemAdminCourse key={course.id} course={course}></ItemAdminCourse>
   ));
 
   // Safeguards

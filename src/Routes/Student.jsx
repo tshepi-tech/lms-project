@@ -2,6 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 
 //Project files
+import CoursePage from "../CoursePage";
 import Landing from "../AuthPages/Landing";
 import Login from "../AuthPages/Login";
 import PasswordReset from "../AuthPages/PasswordReset";
@@ -17,6 +18,7 @@ export default function Student({ uidState, adminState }) {
           path="dashboard"
           element={<Dashboard uidState={uidState} adminState={adminState} />}
         />
+        <Route path="/course/:courseId" element={<CoursePage />} />
         <Route
           path="login"
           element={<Login uidState={uidState} adminState={adminState} />}
