@@ -36,11 +36,13 @@ export default function FormCreateLink({ courseId }) {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <div>
       <h2>Add a link for {courseId}</h2>
-      <InputField setup={form.URLname} state={[URLname, setURLname]} />
-      <InputField setup={form.URL} state={[URL, setURL]} />
-      <button>Submit</button>
-    </form>
+      <form className="form-admin" onSubmit={onSubmit}>
+        <InputField setup={form.URLname} state={[URLname, setURLname]} />
+        <InputField setup={form.URL} state={[URL, setURL]} />
+        <button>Submit</button>
+      </form>
+    </div>
   );
 }

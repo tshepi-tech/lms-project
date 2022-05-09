@@ -58,10 +58,12 @@ export default function FormCreateCourse() {
   return (
     <form onSubmit={onSubmit}>
       <h2>Create a new course</h2>
-      <InputField setup={form.title} state={[title, setTitle]} />
-      <InputField setup={form.text} state={[text, setText]} />
-      <InputField setup={form.term} state={[term, setTerm]} />
-      <button>Submit</button>
+      <div className="form-admin">
+        <InputField setup={form.title} state={[title, setTitle]} />
+        <InputField setup={form.text} state={[text, setText]} />
+        <InputField setup={form.term} state={[term, setTerm]} />
+        <button>Submit</button>
+      </div>
     </form>
   );
 }

@@ -48,9 +48,6 @@ export default function Admin() {
   return (
     <div id="admin">
       <h1>Admin</h1>
-      <Link to="/dashboard">
-        <button>Student view</button>
-      </Link>
       <h2>Here is a list of courses</h2>
       <div className="grid">
         {courses.length === 0 && <EmptyCourse />}

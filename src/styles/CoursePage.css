@@ -1,0 +1,27 @@
+.hero {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #bfa8bb, #8cdba9);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-bottom: 16px;
+}
+
+.form-admin {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-admin button {
+  width: 154px;
+  height: 32px;
+  background-color: #c4a092;
+  border-radius: 12px;
+  font-size: 18px;
+  color: white;
+}

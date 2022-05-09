@@ -1,10 +1,17 @@
 //NPM packages
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //Project files
-import { useModal } from "./../../state/ModalContext";
 import DeleteCourse from "./DeleteCourse";
 import UpdateCourse from "./FormUpdateCourse";
+import {
+  faFolderOpen,
+  faGraduationCap,
+  faTrashCan,
+  faPenToSquare,
+} from "@fortawesome/free-solid-svg-icons";
+import { useModal } from "./../../state/ModalContext";
 
 export default function ItemAdminCourse({ course }) {
   //Global state
@@ -16,22 +23,29 @@ export default function ItemAdminCourse({ course }) {
 
   return (
     <article key={course.id}>
-      <div className="content">
-        <div className="colour_block"></div>
-        <Link to={studentManager}>
-          <button>👩‍🎓</button>
-        </Link>
-        <Link to={resourcesManager}>
-          <button> 📁 </button>
-        </Link>
-        <button onClick={() => setModal(<UpdateCourse course={course} />)}>
-          ✍️
-        </button>
-        <button onClick={() => setModal(<DeleteCourse course={course} />)}>
-          🗑
-        </button>
+      <div className="colour-block">
+        <div className="course-admin">
+          <Link to={studentManager}>
+            <button>
+              {" "}
+              <FontAwesomeIcon icon={faGraduationCap} />
+            </button>
+          </Link>
+          <Link to={resourcesManager}>
+            <button>
+              {" "}
+              <FontAwesomeIcon icon={faFolderOpen} />
+            </button>
+          </Link>
+          <button onClick={() => setModal(<UpdateCourse course={course} />)}>
+            <FontAwesomeIcon icon={faPenToSquare} />
+          </button>
+          <button onClick={() => setModal(<DeleteCourse course={course} />)}>
+            <FontAwesomeIcon icon={faTrashCan} />
+          </button>
+          <p>{course.title}</p>
+        </div>
       </div>
-      <h3>{course.title}</h3>
     </article>
   );
 }

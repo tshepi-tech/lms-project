@@ -29,7 +29,10 @@ export default function CoursePage() {
 
   return (
     <div>
-      {courseId}
+      <div className="hero">
+        <h1>{courseId}</h1>
+      </div>
+      <p> Resource Links </p>
       {linkList}
     </div>
   );

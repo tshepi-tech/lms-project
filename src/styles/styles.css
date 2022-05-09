@@ -1,7 +1,9 @@
 @import url("./admin.css");
 @import url("./authPages.css");
+@import url("./Dashboard.css");
 @import url("./modal.css");
 @import url("./Landing.css");
+@import url("CoursePage.css");
 
 .App {
   max-width: 960px;
@@ -12,11 +14,7 @@ img {
   max-width: 100%;
   height: auto;
 }
-.colour_block {
-  width: 240px;
-  height: 240px;
-  background-color: coral;
-}
+
 .input-field {
   display: block;
   padding: 8px;
