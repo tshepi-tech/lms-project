@@ -8,12 +8,13 @@ import { Link } from "react-router-dom";
 import { logoutUser } from "./scripts/firebaseAuth";
 import { getCollection, addDocument } from "./scripts/firestore";
 import { useCourses } from "./state/CourseContext";
+import { useUID } from "./state/UIDContext";
 
-export default function Dashboard({ uidState, adminState }) {
+export default function Dashboard() {
   const navigation = useNavigate();
-  const [uid, setUID] = uidState;
-  const [uidAdmin, setUIDadmin] = adminState;
 
+  //Globa state
+  const { uid, setUID } = useUID();
   const { courses, setCourses } = useCourses();
 
   // Method

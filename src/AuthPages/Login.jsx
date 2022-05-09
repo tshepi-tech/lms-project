@@ -10,16 +10,19 @@ import FormImage from "../assets/images/FormImage.png";
 import { loginUser } from "../scripts/firebaseAuth";
 import { getCollection } from "../scripts/firestore";
 import { useUserRole } from "../state/UserRolesContext";
+import { useUID } from "../state/UIDContext";
 import NavigationStatic from "../components/NavigationStatic";
 
-export default function Login({ uidState, adminState }) {
+export default function Login() {
   const navigation = useNavigate();
-  const [uid, setUID] = uidState;
-  const [uidAdmin, setUIDadmin] = adminState;
+  //Global state
+  const { students, setStudents } = useUserRole();
+  const { setUID } = useUID();
+  const { setUIDadmin } = useUID();
 
+  //Local state
   const [email, setEmail] = useState("tshepi.lehutjo@gmail.com");
   const [password, setPassword] = useState("12345abcd");
-  const { students, setStudents } = useUserRole();
 
   useEffect(() => {
     async function loadData(path) {

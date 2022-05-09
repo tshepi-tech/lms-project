@@ -10,20 +10,14 @@ import PasswordReset from "../AuthPages/PasswordReset";
 import MangageStudent from "../TeacherView/pages/ManageStudent";
 import ManageResources from "../TeacherView/pages/ManageResources";
 
-export default function Admin({ adminState, uidState }) {
+export default function Admin() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="resetpassword" element={<PasswordReset />} />
-        <Route
-          path="login"
-          element={<Login adminState={adminState} uidState={uidState} />}
-        />
-        <Route
-          path="dashboard"
-          element={<Dashboard uidState={uidState} adminState={adminState} />}
-        />
+        <Route path="login" element={<Login />} />
+        <Route path="dashboard" element={<Dashboard />} />
         <Route path="admin" element={<AdminDashboard />} />
         <Route path="admin/:courseId" element={<MangageStudent />} />
 

@@ -9,21 +9,15 @@ import PasswordReset from "../AuthPages/PasswordReset";
 import Signup from "../AuthPages/Signup";
 import Dashboard from "../Dashboard";
 
-export default function Student({ uidState, adminState }) {
+export default function Student() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route
-          path="dashboard"
-          element={<Dashboard uidState={uidState} adminState={adminState} />}
-        />
+        <Route path="dashboard" element={<Dashboard />} />
         <Route path="/course/:courseId" element={<CoursePage />} />
-        <Route
-          path="login"
-          element={<Login uidState={uidState} adminState={adminState} />}
-        />
-        <Route path="signup" element={<Signup uidState={uidState} />} />
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
         <Route path="resetpassword" element={<PasswordReset />} />
       </Routes>
     </div>

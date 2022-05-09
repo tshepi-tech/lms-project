@@ -10,11 +10,13 @@ import { createUser } from "../scripts/firebaseAuth";
 import FormImage from "../assets/images/FormImage.png";
 import { createDocumentWithId } from "../scripts/firestore";
 import NavigationStatic from "../components/NavigationStatic";
+import { useUID } from "../state/UIDContext";
 
-export default function Signup({ uidState }) {
-  const [uid, setUID] = uidState;
+export default function Signup() {
   const navigation = useNavigate();
-
+  //Global state
+  const { uid, setUID } = useUID();
+  //Local state
   const [name, setName] = useState("tshepi");
   const [email, setEmail] = useState("tshepi.lehutjo@gmail.com");
   const [studentId, setStudentId] = useState("704780");

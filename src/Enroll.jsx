@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 import { addDocument } from "./scripts/firestore";
 import { getCollection } from "./scripts/firestore";
 import { useUserRole } from "./state/UserRolesContext";
+import { useUID } from "./state/UIDContext";
 
-export default function Enroll({ courses, uid }) {
+export default function Enroll({ courses }) {
   //Global state
   const { students, setStudents } = useUserRole();
+  const { uid } = useUID();
 
   useEffect(() => {
     async function loadData(path) {
@@ -40,7 +42,7 @@ export default function Enroll({ courses, uid }) {
   }
 
   const courseList = courses.map((item) => (
-    <li classname="list" key={item.id}>
+    <li className="list" key={item.id}>
       <div className="thumbnail"></div>
       <div className="course-text">
         <Link className="course-item" to={`/course/${item.id}`}>
