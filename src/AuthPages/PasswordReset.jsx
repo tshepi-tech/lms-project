@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 //Project files
 import InputField from "../components/InputField";
 import form from "../data/resetPasswordForm.json";
+import FormImage from "../assets/images/FormImage.png";
 import { resetUser } from "../scripts/firebaseAuth";
 import NavigationStatic from "../components/NavigationStatic";
 
@@ -24,16 +25,19 @@ export default function PasswordReset() {
       <p>
         Please fill in the email which you used to create the account of the
         password you want to reset. Instructions to reset the password will be
-        sent to that email{" "}
+        sent to that email.
       </p>
-      <form onSubmit={onReset}>
-        <InputField setup={form.email} state={[email, setEmail]} />
-        <button>Submit</button>
-      </form>
-      <p>
-        Did you remember your password?
-        <Link to="/login">Log in</Link> to go back the login page.
-      </p>
+      <div className="form-content">
+        <form onSubmit={onReset}>
+          <InputField setup={form.email} state={[email, setEmail]} />
+          <button>Submit</button>
+        </form>
+        <img
+          className="form-image"
+          src={FormImage}
+          alt="animated man on computer"
+        />
+      </div>
     </div>
   );
 }

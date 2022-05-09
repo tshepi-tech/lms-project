@@ -7,7 +7,9 @@ import { useNavigate } from "react-router-dom";
 import InputField from "../components/InputField";
 import form from "../data/signupForm.json";
 import { createUser } from "../scripts/firebaseAuth";
+import FormImage from "../assets/images/FormImage.png";
 import { createDocumentWithId } from "../scripts/firestore";
+import NavigationStatic from "../components/NavigationStatic";
 
 export default function Signup({ uidState }) {
   const [uid, setUID] = uidState;
@@ -43,14 +45,25 @@ export default function Signup({ uidState }) {
   }
   return (
     <div>
+      <NavigationStatic />
       <h2>Create an account to view courses and materials at Web3 school</h2>
-      <form onSubmit={onSignup}>
-        <InputField setup={form.name} state={[name, setName]} />
-        <InputField setup={form.email} state={[email, setEmail]} />
-        <InputField setup={form.studentId} state={[studentId, setStudentId]} />
-        <InputField setup={form.password} state={[password, setPassword]} />
-        <button>Submit</button>
-      </form>
+      <div className="form-content">
+        <form onSubmit={onSignup}>
+          <InputField setup={form.name} state={[name, setName]} />
+          <InputField setup={form.email} state={[email, setEmail]} />
+          <InputField
+            setup={form.studentId}
+            state={[studentId, setStudentId]}
+          />
+          <InputField setup={form.password} state={[password, setPassword]} />
+          <button>Submit</button>
+        </form>
+        <img
+          className="form-image"
+          src={FormImage}
+          alt="animated man on computer"
+        />
+      </div>
     </div>
   );
 }

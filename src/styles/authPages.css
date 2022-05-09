@@ -1,0 +1,25 @@
+form {
+  margin-top: 75px;
+}
+
+.input-field {
+  display: flex;
+}
+
+.form-image {
+  height: 320px;
+  margin-top: 50px;
+}
+
+.form-content {
+  display: flex;
+}
+
+.form-content button {
+  width: 154px;
+  height: 32px;
+  background-color: #c4a092;
+  border-radius: 12px;
+  font-size: 18px;
+  color: white;
+}
