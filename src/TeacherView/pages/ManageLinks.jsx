@@ -14,8 +14,6 @@ export default function ManageLinks() {
   //Global state
   const { setModal } = useModal();
   const { links, setLinks } = useResources();
-  // Local state
-  const [status, setStatus] = useState(0); // 0: loading, 1: loaded, 2: error
 
   useEffect(() => {
     async function loadData() {

@@ -1,7 +1,7 @@
 .thumbnail {
   width: 160px;
   height: 90px;
-  background-color: #a44f30;
+  background: linear-gradient(to right, #a44f30, #c4a092);
   opacity: 0.85;
   border-radius: 12px 12px 0px 0px;
 }

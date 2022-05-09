@@ -4,12 +4,12 @@
 @import url("./modal.css");
 @import url("./Landing.css");
 @import url("CoursePage.css");
+@import url("./Navigation.css");
 
 .App {
   max-width: 960px;
   margin: 0 auto;
 }
-
 img {
   max-width: 100%;
   height: auto;
@@ -18,4 +18,16 @@ img {
 .input-field {
   display: block;
   padding: 8px;
+}
+
+:root {
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
+}
+
+body {
+  margin-left: 5rem;
 }
