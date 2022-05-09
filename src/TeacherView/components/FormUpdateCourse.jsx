@@ -44,6 +44,7 @@ export default function FormUpdateCourse({ course }) {
     console.error(error);
     alert("Could not update the item. Try again");
   }
+
   return (
     <div>
       <form onSubmit={onSubmit}>

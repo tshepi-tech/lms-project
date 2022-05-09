@@ -41,8 +41,16 @@ export default function Signup({ uidState }) {
     else {
       setUID(newUID);
       navigation("/dashboard");
+      resetForm();
     }
   }
+  function resetForm() {
+    setName("");
+    setEmail("");
+    setStudentId("");
+    setPassword(null);
+  }
+
   return (
     <div>
       <NavigationStatic />

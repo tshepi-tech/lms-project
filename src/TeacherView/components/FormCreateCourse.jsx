@@ -48,11 +48,17 @@ export default function FormCreateCourse() {
     setCourses([...courses, course]);
     setModal(null);
     alert(`${course.title} added`);
+    resetForm();
   }
 
   function onFail(error) {
     console.error(error);
     alert("Could not create a course, check that the course does not exist.");
+  }
+  function resetForm() {
+    setTitle("");
+    setText("");
+    setTerm("");
   }
 
   return (

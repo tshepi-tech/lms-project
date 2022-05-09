@@ -41,11 +41,16 @@ export default function FormUpdateLink({ link, courseId }) {
     clonedLinks[index] = editedItem;
     setLinks(clonedLinks);
     setModal(null);
+    resetForm();
   }
 
   function onFail(error) {
     console.error(error);
     alert("Could not update the link. Try again");
+  }
+  function resetForm() {
+    setURLname("");
+    setURL("");
   }
   return (
     <form onSubmit={onSubmit}>

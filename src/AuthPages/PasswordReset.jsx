@@ -1,6 +1,5 @@
 //NPM packages
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 //Project files
 import InputField from "../components/InputField";
@@ -17,6 +16,10 @@ export default function PasswordReset() {
 
     await resetUser(email);
     alert(`We sent an email to ${email}. Check you spam folder as well.`);
+    resetForm();
+  }
+  function resetForm() {
+    setEmail("");
   }
 
   return (
