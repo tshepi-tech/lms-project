@@ -17,9 +17,9 @@ export default function FormCreateCourse() {
   const { setModal } = useModal();
 
   //Local state
-  const [title, setTitle] = useState("Web3");
-  const [text, setText] = useState("discover the new age of the internet");
-  const [term, setTerm] = useState("Spring 2022");
+  const [title, setTitle] = useState("");
+  const [text, setText] = useState("");
+  const [term, setTerm] = useState("");
 
   //Methods
 

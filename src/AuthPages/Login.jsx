@@ -16,8 +16,8 @@ export default function Login({ uidState, adminState }) {
   const [uid, setUID] = uidState;
   const [uidAdmin, setUIDadmin] = adminState;
 
-  const [email, setEmail] = useState("tshepi.lehutjo@gmail.com");
-  const [password, setPassword] = useState("12345abcd");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const { students, setStudents } = useUserRole();
 
   useEffect(() => {
@@ -49,7 +49,7 @@ export default function Login({ uidState, adminState }) {
 
   function resetForm() {
     setEmail("");
-    setPassword(null);
+    setPassword("");
   }
 
   return (

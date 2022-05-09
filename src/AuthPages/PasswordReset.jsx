@@ -9,7 +9,7 @@ import { resetUser } from "../scripts/firebaseAuth";
 import NavigationStatic from "../components/NavigationStatic";
 
 export default function PasswordReset() {
-  const [email, setEmail] = useState("tshepi.lehutjo@gmail.com");
+  const [email, setEmail] = useState("");
 
   async function onReset(event) {
     event.preventDefault();

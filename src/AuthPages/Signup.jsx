@@ -15,10 +15,10 @@ export default function Signup({ uidState }) {
   const [uid, setUID] = uidState;
   const navigation = useNavigate();
 
-  const [name, setName] = useState("tshepi");
-  const [email, setEmail] = useState("tshepi.lehutjo@gmail.com");
-  const [studentId, setStudentId] = useState("704780");
-  const [password, setPassword] = useState("12345abcd");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [studentId, setStudentId] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem(uid);
@@ -48,7 +48,7 @@ export default function Signup({ uidState }) {
     setName("");
     setEmail("");
     setStudentId("");
-    setPassword(null);
+    setPassword("");
   }
 
   return (
