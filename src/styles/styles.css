@@ -4,7 +4,6 @@
 @import url("./modal.css");
 @import url("./Landing.css");
 @import url("CoursePage.css");
-@import url("./Navigation.css");
 
 .App {
   max-width: 960px;
